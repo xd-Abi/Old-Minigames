@@ -40,12 +40,12 @@ project "Minigames"
 
     filter "configurations:Debug"
         symbols "On"
-        buildoptions "/MDd"
+		runtime "Debug"
 
     filter "configurations:Release"
         optimize "On"       
-        buildoptions "/MD"
+		runtime "Release"
 
     filter "configurations:Dist"
         optimize "On"        
-        buildoptions "/MD"
+		runtime "Release"

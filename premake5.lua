@@ -12,3 +12,4 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Minigames"
 include "Minigames/vendor/glfw"
+include "Minigames/vendor/glad"

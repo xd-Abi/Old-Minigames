@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "Window.h"
+#include "RenderAPI.h"
 
 namespace Minigames
 {
@@ -9,6 +10,11 @@ namespace Minigames
 		m_Running = true;
 
 		Window::Create();
+		RenderMaster::Init();
+
+		/* Initialize Game */
+
+		Window::Show();
 	}
 
 	Application::~Application()
@@ -31,5 +37,6 @@ namespace Minigames
 			m_Running = false;
 		
 		Window::Update();
+		RenderMaster::Render();
 	}
 }

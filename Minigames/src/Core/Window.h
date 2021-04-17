@@ -11,16 +11,17 @@ namespace Minigames
 	public:
 
 		static void Create();
+		static void Show();
 		static void Destroy();
 		static void Update();
+		static void SwapBuffers();
 		static bool ShouldClose();
 	
 	private:
 
 		static GLFWwindow* s_Window;
-		static int s_Width;
-		static int s_Height;
+		static uint32_t s_Width;
+		static uint32_t s_Height;
 		
 	};
-
 }

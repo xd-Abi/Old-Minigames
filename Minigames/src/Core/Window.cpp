@@ -4,8 +4,8 @@ namespace Minigames
 {
 
 	GLFWwindow* Window::s_Window;
-	int Window::s_Width;
-	int Window::s_Height;
+	uint32_t Window::s_Width;
+	uint32_t Window::s_Height;
 	
 	void Window::Create()
 	{
@@ -13,6 +13,8 @@ namespace Minigames
 		{
 			/* Error handling */
 		}
+
+		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 
 		s_Width = 1280;
 		s_Height = 720;
@@ -29,6 +31,11 @@ namespace Minigames
 		glfwMakeContextCurrent(s_Window);
 	}
 
+	void Window::Show()
+	{
+		glfwShowWindow(s_Window);
+	}
+
 	void Window::Destroy()
 	{
 		glfwDestroyWindow(s_Window);
@@ -38,6 +45,10 @@ namespace Minigames
 	void Window::Update()
 	{
 		glfwPollEvents();
+	}
+
+	void Window::SwapBuffers()
+	{
 		glfwSwapBuffers(s_Window);
 	}
 
