@@ -1,6 +1,9 @@
-#include <stdio.h>
 
-int main()
+#include "Core/Application.h"
+
+int main(int argc, char* argv[])
 {
-	printf("TEST");
+	Minigames::Application* app = new Minigames::Application();
+	app->Run();
+	delete app;
 }

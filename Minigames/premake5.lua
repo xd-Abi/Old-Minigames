@@ -6,6 +6,7 @@ project "Minigames"
     targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
+
     files
     {
         "src/**.h",
@@ -14,9 +15,24 @@ project "Minigames"
 
     includedirs
     {
-        "src"
+        "src",
+        "vendor/glfw/include",
+        "vendor/glad/include"
     }
-    
+
+    links
+    {
+        "glfw",
+        "glad",
+        "opengl32.lib"
+    }
+
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
+    }
+
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"
@@ -24,9 +40,12 @@ project "Minigames"
 
     filter "configurations:Debug"
         symbols "On"
+        buildoptions "/MDd"
 
     filter "configurations:Release"
-        optimize "On"
+        optimize "On"       
+        buildoptions "/MD"
 
     filter "configurations:Dist"
-        optimize "On"
+        optimize "On"        
+        buildoptions "/MD"
