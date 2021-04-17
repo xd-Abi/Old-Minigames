@@ -6,6 +6,8 @@ project "Minigames"
     targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "mgpch.h"
+    pchsource "src/mgpch.cpp"
 
     files
     {
@@ -17,7 +19,8 @@ project "Minigames"
     {
         "src",
         "vendor/glfw/include",
-        "vendor/glad/include"
+        "vendor/glad/include",
+        "vendor/glm"
     }
 
     links

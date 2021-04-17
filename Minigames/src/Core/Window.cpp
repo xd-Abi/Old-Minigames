@@ -1,3 +1,4 @@
+#include "mgpch.h"
 #include "Window.h"
 
 namespace Minigames
@@ -15,6 +16,7 @@ namespace Minigames
 		}
 
 		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+		glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 
 		s_Width = 1280;
 		s_Height = 720;

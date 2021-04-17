@@ -1,6 +1,7 @@
+#include "mgpch.h"
 #include "Application.h"
 #include "Window.h"
-#include "RenderAPI.h"
+#include "Renderer/RenderAPI.h"
 
 namespace Minigames
 {
