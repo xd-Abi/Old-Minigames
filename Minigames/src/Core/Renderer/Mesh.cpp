@@ -21,8 +21,6 @@ namespace Minigames
 		glDeleteBuffers(1, &m_Tbo);
 		glDeleteBuffers(1, &m_Ibo);
 		glDeleteVertexArrays(1, &m_Vao);
-
-		MG_ERROR("TEST");
 	}
 
 	void Mesh::Draw()
@@ -51,7 +49,7 @@ namespace Minigames
 		glBindBuffer(GL_ARRAY_BUFFER, m_Tbo);
 		glBufferData(GL_ARRAY_BUFFER, texCoords.size() * sizeof(texCoords[0]), &texCoords[0], GL_STATIC_DRAW);
 
-		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	}
 

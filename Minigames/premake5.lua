@@ -20,7 +20,8 @@ project "Minigames"
         "src",
         "vendor/glfw/include",
         "vendor/glad/include",
-        "vendor/glm"
+        "vendor/glm",
+        "vendor/stb_image"
     }
 
     links

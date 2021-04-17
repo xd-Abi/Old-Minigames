@@ -10,12 +10,18 @@ namespace Minigames
 {
 	/* RenderMaster */
 
+	static Ref<Texture> tex;
+	static Ref<Texture> tex2;
+
 	void RenderMaster::Init()
 	{
 		RenderAPI::Init();
 		RenderAPI::SetClearColor(0.07f, 0.07f, 0.07f, 1);
 
 		Renderer2D::Init();
+
+		tex = CreateRef<Texture>("assets/test.png");
+		tex2 = CreateRef<Texture>("assets/test.jpg");
 	}
 
 	void RenderMaster::Render()
@@ -23,7 +29,9 @@ namespace Minigames
 		RenderAPI::Clear();
 
 		/* TEST */
-		Renderer2D::DrawQuad(glm::vec3(-0.8f,0,0), glm::vec2(0.2f,0.5f));
+		Renderer2D::DrawTexture(glm::vec3(-0.8f,0,0), glm::vec2(0.2f,0.5f), tex);
+		Renderer2D::DrawTexture(glm::vec3(0, 0, 0), glm::vec2(0.5f, 0.5f), tex2);
+		Renderer2D::DrawQuad(glm::vec3(0, 0.8f, 0), glm::vec2(0.2f, 0.5f), glm::vec4(1,0,0,1));
 
 		Window::SwapBuffers();
 	}

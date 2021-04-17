@@ -3,6 +3,7 @@
 #include "glm/glm.hpp"
 #include "Mesh.h"
 #include "Shader.h"
+#include "Texture.h"
 
 namespace Minigames
 {
@@ -14,6 +15,8 @@ namespace Minigames
 
 		static void Init();
 		static void DrawQuad(const glm::vec3 pos, const glm::vec2 scale);
+		static void DrawQuad(const glm::vec3 pos, const glm::vec2 scale, const glm::vec4 color);
+		static void DrawTexture(const glm::vec3 pos, const glm::vec2 scale, const Ref<Texture> texture);
 
 	private:
 
