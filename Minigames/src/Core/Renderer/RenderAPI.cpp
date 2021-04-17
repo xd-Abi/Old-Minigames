@@ -23,7 +23,7 @@ namespace Minigames
 		RenderAPI::Clear();
 
 		/* TEST */
-		Renderer2D::DrawQuad(glm::vec2(), glm::vec2());
+		Renderer2D::DrawQuad(glm::vec3(-0.8f,0,0), glm::vec2(0.2f,0.5f));
 
 		Window::SwapBuffers();
 	}

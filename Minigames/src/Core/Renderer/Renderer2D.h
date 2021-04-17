@@ -13,7 +13,7 @@ namespace Minigames
 	public:
 
 		static void Init();
-		static void DrawQuad(const glm::vec2 pos, const glm::vec2 scale);
+		static void DrawQuad(const glm::vec3 pos, const glm::vec2 scale);
 
 	private:
 

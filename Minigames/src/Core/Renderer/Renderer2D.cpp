@@ -1,5 +1,6 @@
 #include "mgpch.h"
 #include "Renderer2D.h"
+#include "glm/gtc/matrix_transform.hpp"
 
 namespace Minigames
 {
@@ -35,9 +36,13 @@ namespace Minigames
 		s_Shader = CreateRef<Shader>("QuadShader.glsl");
 	}
 
-	void Renderer2D::DrawQuad(const glm::vec2 pos, const glm::vec2 scale)
+	void Renderer2D::DrawQuad(const glm::vec3 pos, const glm::vec2 scale)
 	{
 		s_Shader->Bind();
+
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * glm::scale(glm::mat4(1.0f), { scale.x, scale.y, 1.0f });
+
+		s_Shader->SetMat4("mvp", transform);
 		s_Quad->Draw();
 		s_Shader->Unbind();
 	}
