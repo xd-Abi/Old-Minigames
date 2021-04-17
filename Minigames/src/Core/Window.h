@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GLFW/glfw3.h"
+#include "Renderer/Texture.h"
 
 namespace Minigames
 {
@@ -23,5 +24,18 @@ namespace Minigames
 		static uint32_t s_Width;
 		static uint32_t s_Height;
 		
+	};
+
+	class WindowTitleBar
+	{
+
+	public:
+
+		static void Init();
+		static void Draw();
+
+	private:
+
+		static Ref<Texture> s_TitleTex;
 	};
 }
