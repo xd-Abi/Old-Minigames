@@ -21,20 +21,23 @@ project "Minigames"
         "vendor/glfw/include",
         "vendor/glad/include",
         "vendor/glm",
-        "vendor/stb_image"
+        "vendor/stb_image",
+	"vendor/ImGui",
+	"vendor/ImGui/src"
     }
 
     links
     {
         "glfw",
         "glad",
+	"ImGui",
         "opengl32.lib"
     }
 
     defines
     {
         "_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE"
+	"GLFW_INCLUDE_NONE"
     }
 
     filter "system:windows"

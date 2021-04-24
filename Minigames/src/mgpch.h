@@ -19,5 +19,3 @@
 #ifdef MG_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
-
-#include "glad/glad.h"
