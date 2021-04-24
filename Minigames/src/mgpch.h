@@ -13,8 +13,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Core/Base.h"
-#include "Core/Log.h"
+#include "Minigames/Core/Base.h"
+#include "Minigames/Core/Log.h"
 
 #ifdef MG_PLATFORM_WINDOWS
 	#include <Windows.h>
